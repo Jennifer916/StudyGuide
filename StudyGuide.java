@@ -2,33 +2,35 @@ public class StudyGuide {
     private ArrayList <Integer> scores;
     private String mode;
     private String answer; 
-    private ArrayList <String [] [] > questions; 
-    public StudyGuide (String m) {
-        mode = m; 
-    }
+    private int score; 
+    private int count ;
+    private int miss= 3; 
+    private ArrayList <String[]> questions; 
+  //  public StudyGuide () {
+        
+  //  }
     public String playgame() {
         int score = 0 ; 
-        int miss= 0 ; 
+        int miss= 5 ; 
         int count = 0 ;
-        if (mode = "hard") {
-            miss = 3; 
-        }
+        int size =  questions.size();
         while (count>miss) {
-                int random = (int) (Math.random () * questions.size()) + 1; 
-                getanswer();
-                if (questions.get(random)[2]= getanswer()) {
-                    score++;
-                } else {
-                    count++;
-                }
-            }
+                getquestion();
+        }
           scores.add(score); 
           return  "Congradulations, you got a " + score;  
     }
-    public String getquestion () {
-        Scanner s = new Scanner (System.in) ;
+    public boolean getquestion () {
+        Scanner s = new Scanner (System.in);
+        int random = (int) (Math.random () * size) + 1; 
+        System.out.println(questions.get(random)[1]);
         answer = s.nextline();
-        return answer;  
+        if (answer.indexOf(questions.get(random)[2])>=0 ) {
+            score++;
+            return true;
+        }
+        count++;
+        return false;
     }
     public ArrayList <String> questionbank () {
         return questions;
@@ -37,7 +39,7 @@ public class StudyGuide {
         
     }
     public boolean modifyquestion (int index, String question, String answer) {
-        String [][] arr = {question, answer};
+        String [] arr = {question, answer};
         if (index>questions.size ()) {
             return false; 
         } else { 
@@ -51,5 +53,10 @@ public class StudyGuide {
         
         
     }
+    public void addquestion (String question, String answer) {
+        String [] list = {question, answer};
+        questions.add(list);
+    }
+
 
 }
