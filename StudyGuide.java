@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 public class StudyGuide {
     private ArrayList <Integer> scores;
     private String mode;
@@ -5,7 +7,7 @@ public class StudyGuide {
     private int score; 
     private int count ;
     private int miss= 3; 
-    private ArrayList <String[]> questions; 
+    private ArrayList <String[]> questions;
   //  public StudyGuide () {
         
   //  }
@@ -22,9 +24,9 @@ public class StudyGuide {
     }
     public boolean getquestion () {
         Scanner s = new Scanner (System.in);
-        int random = (int) (Math.random () * size) + 1; 
+        int random = (int) (Math.random () * questions.size() + 1);
         System.out.println(questions.get(random)[1]);
-        answer = s.nextline();
+        answer = s.nextLine();
         if (answer.indexOf(questions.get(random)[2])>=0 ) {
             score++;
             return true;
@@ -32,7 +34,7 @@ public class StudyGuide {
         count++;
         return false;
     }
-    public ArrayList <String> questionbank () {
+    public ArrayList <String[]> questionbank () {
         return questions;
     }
     public void change ( String question, String answer) {
@@ -43,7 +45,7 @@ public class StudyGuide {
         if (index>questions.size ()) {
             return false; 
         } else { 
-            if (index==question.size() ) {
+            if (index==questions.size() ) {
                 questions.add(arr);
                 return true;
             }
