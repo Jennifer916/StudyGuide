@@ -18,14 +18,15 @@ public class StudyGuide {
                 } else {
                     count++;
                 }
+        }
           sortscores(score); 
           return  "Congradulations, you got a " + score;  
     }
     public boolean getquestion () {
-        Scanner s = new Scanner (System.in);
         int random = (int) (Math.random () * questions.size() + 1);
         System.out.println(questions.get(random)[1]);
-        answer = s.nextLine();
+        Scanner s = new Scanner (System.in);
+        String answer = s.nextLine();
         if (answer.indexOf(questions.get(random)[2])>=0 ) {
             score++;
             return true; 
