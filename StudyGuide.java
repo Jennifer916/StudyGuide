@@ -55,3 +55,11 @@ public class StudyGuide {
             }
         scores.add(score) ; 
 }
+    public int getscore() {
+        return scores;
+    }
+     public int getspecscore(int index) {
+        return scores[index];
+    }
+}
+    
