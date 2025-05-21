@@ -38,10 +38,6 @@ public class StudyGuide {
         return false;
     }
 
-    public ArrayList<String[]> questionbank() {
-        return questions;
-    }
-
     public void modifyquestion(int index, String question, String answer) {
         String[] arr = {question, answer};
         if (index >= questions.size()) {
@@ -59,6 +55,15 @@ public class StudyGuide {
     public int getscore() {
         return highscore;
     }
+    public String questionbank() {
+        for (int i = 0 ; i<questions.size(); i++ ) {
+            String[] a = questions.get(i);
+            return toString(a);
+        }
+    }
+    public String toString (String [] a ) {
 
+               return "Question: " + a[1] + "/n" + "Answer: " + a[2];
+    }
 }
     

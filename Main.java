@@ -6,6 +6,7 @@ public class Main {
     a.addquestion("How do you say glass in Spanish?", "vidrio");
     a.addquestion("How do you say flood in Spanish?", "inundacion");
     a.addquestion("What does the word pila mean? ", "battery");
-    a.playgame();
+    a.questionbank();
+    //a.playgame();
  }
 }
