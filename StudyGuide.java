@@ -4,6 +4,7 @@ public class StudyGuide {
     private int highscore;
     private String mode;
     private String answer;
+    private int random;
     private ArrayList<String[]> questions;
     public StudyGuide () {
         questions = new ArrayList<String[]> ();
@@ -13,12 +14,11 @@ public class StudyGuide {
         int miss = 3;
         int count = 0;
         while (count > miss) {
-            if (getquestion()) {
+            if (answer.indexOf(questions.get(random)[2]) >= 0) {
                 score++;
             } else {
-                count++;
+               count++;
             }
-        }
         if (score > highscore) {
             highscore = score;
         }
@@ -26,16 +26,10 @@ public class StudyGuide {
     }
 
     public boolean getquestion() {
-        int random = (int) (Math.random() * questions.size() + 1);
-        System.out.println(questions.get(random)[1]);
         Scanner s = new Scanner(System.in);
-        String answer = s.nextLine();
-        if (answer.indexOf(questions.get(random)[2]) >= 0) {
-
-            return true;
-        }
-
-        return false;
+        random = (int) (Math.random() * questions.size() + 1);
+        System.out.println(questions.get(random)[1]);
+        return s.nextLine();
     }
 
     public void modifyquestion(int index, String question, String answer) {
@@ -55,15 +49,12 @@ public class StudyGuide {
     public int getscore() {
         return highscore;
     }
-    public String questionbank() {
-        for (int i = 0 ; i<questions.size(); i++ ) {
-            String[] a = questions.get(i);
-            return toString(a);
-        }
+    public ArrayList<String[]> questionbank() {
+      return questions;
     }
-    public String toString (String [] a ) {
+    public String toString (int i ) {
 
-               return "Question: " + a[1] + "/n" + "Answer: " + a[2];
+               return "Question: " + questions.get(i)[0] + "/n " + "Answer: " + questions.get(i)[1] ;
     }
 }
     

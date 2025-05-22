@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
     StudyGuide a = new StudyGuide (); 
@@ -6,7 +8,9 @@ public class Main {
     a.addquestion("How do you say glass in Spanish?", "vidrio");
     a.addquestion("How do you say flood in Spanish?", "inundacion");
     a.addquestion("What does the word pila mean? ", "battery");
-    a.questionbank();
-    //a.playgame();
+    for (int i = 0; i<a.questionbank().size(); i++ ) {
+        System.out.println(a.toString(i));
+    }
+    a.playgame();
  }
 }
