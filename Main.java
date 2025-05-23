@@ -8,9 +8,15 @@ public class Main {
     a.addquestion("How do you say glass in Spanish?", "vidrio");
     a.addquestion("How do you say flood in Spanish?", "inundacion");
     a.addquestion("What does the word pila mean? ", "battery");
-    for (int i = 0; i<a.questionbank().size(); i++ ) {
+    a.addquestion("How to you say climate change in Spanish?", "cambio climatico");
+    a.addquestion("What does the word reciclar mean" , "recycle");
+   for (int i = 0; i<a.questionbank().size(); i++ ) {
         System.out.println(a.toString(i));
     }
     a.playgame();
+    a.modifyquestion(4, "How do you say endangered species in Spanish", "el especies de peligro");
+        for (int i = 0; i<a.questionbank().size(); i++ ) {
+            System.out.println(a.toString(i));
+        }
  }
 }

@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class StudyGuide {
@@ -9,27 +10,35 @@ public class StudyGuide {
     public StudyGuide () {
         questions = new ArrayList<String[]> ();
     }
-    public String playgame() {
+    public void playgame() {
         int score = 0;
         int miss = 3;
         int count = 0;
-        while (count > miss) {
-            if (answer.indexOf(questions.get(random)[2]) >= 0) {
+        while (count < miss) {
+            String useranswer = getanswer();
+            if (useranswer.indexOf(questions.get(random)[1]) >= 0) {
                 score++;
+                System.out.println("You're right!");
             } else {
-               count++;
+                count++;
+                System.out.println("You're wrong!");
             }
+        }
+        System.out.println("Game's over");
         if (score > highscore) {
             highscore = score;
+            System.out.println("You got a new high score!");
         }
-        return "Congradulations, you got a " + score;
+        System.out.println("Congradulations, you got a " + score);
     }
 
-    public boolean getquestion() {
+    public String getanswer() {
         Scanner s = new Scanner(System.in);
-        random = (int) (Math.random() * questions.size() + 1);
-        System.out.println(questions.get(random)[1]);
-        return s.nextLine();
+        random = (int) (Math.random() * questions.size()) ;
+        System.out.println(questions.get(random)[0]);
+        String input =  s.nextLine();
+        s.nextLine();
+        return input;
     }
 
     public void modifyquestion(int index, String question, String answer) {
