@@ -59,11 +59,23 @@ public class StudyGuide {
         return highscore;
     }
     public ArrayList<String[]> questionbank() {
-      return questions;
+
+        return questions;
     }
     public String toString (int i ) {
 
                return "Question: " + questions.get(i)[0] + "/n " + "Answer: " + questions.get(i)[1] ;
     }
+    public String [] searchquestion (int index) {
+        for (int i = 0 ; i<questions.size(); i++ ) {
+            if (i== index) {
+                return questions.get(i);
+            }
+        }
+        String [] nothing = {"Nothing", "Nothing"};
+        return nothing;
+
+    }
+
 }
     

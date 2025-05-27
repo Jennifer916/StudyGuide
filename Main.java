@@ -13,10 +13,11 @@ public class Main {
    for (int i = 0; i<a.questionbank().size(); i++ ) {
         System.out.println(a.toString(i));
     }
-    a.playgame();
+   a.playgame();
     a.modifyquestion(4, "How do you say endangered species in Spanish", "el especies de peligro");
         for (int i = 0; i<a.questionbank().size(); i++ ) {
             System.out.println(a.toString(i));
         }
+        a.getscore();
  }
 }
