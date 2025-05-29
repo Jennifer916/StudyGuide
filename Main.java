@@ -10,14 +10,28 @@ public class Main {
     a.addquestion("What does the word pila mean? ", "battery");
     a.addquestion("How to you say climate change in Spanish?", "cambio climatico");
     a.addquestion("What does the word reciclar mean" , "recycle");
-   for (int i = 0; i<a.questionbank().size(); i++ ) {
-        System.out.println(a.toString(i));
-    }
-   a.playgame();
-    a.modifyquestion(4, "How do you say endangered species in Spanish", "el especies de peligro");
+    a.addquestion("What is the tu form of the word escribir in imperfect tense", "escribias");
+    a.addquestion("What is the yo form of the word ir in preterite tense", "fui");
+    a.addquestion("What is the yo form of the word sacar in preterite tense", "saque");
+    a.addquestion("What is the el/ella form of the word estar in preterite tense", "estuvo");
+    a.addquestion("What is the el/ella form of the word mirar in preterite tense", "miro");
+    a.addquestion("What is the ellos/ellas form of the word beber in preterite tense", "bebieron");
+    a.addquestion("What is the nosotros form of the word ser in preterite tense", "fuimos");
+    a.addquestion("What is the el/ella form of the word ser in imperfect tense", "era");
+    a.addquestion("What is the tu form of the word ir in imperfect tense", "ibas");
+    a.addquestion("What is the tu form of the word ver in imperfect tense", "veias");
+    a.addquestion("What is the yo form of the word ver in preterite tense", "vi");
+
+
         for (int i = 0; i<a.questionbank().size(); i++ ) {
-            System.out.println(a.toString(i));
+        System.out.println(a.toString(i));
         }
-        a.getscore();
+   a.playgame();
+   a.modifyquestion(4, "How do you say endangered species in Spanish", "el especies de peligro");
+        for (int i = 0; i<a.questionbank().size(); i++ ) {
+           System.out.println(a.toString(i));
+       }
+   a.getscore();
+   a.searchquestion(4);
  }
 }

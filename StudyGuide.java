@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class StudyGuide {
     private int highscore;
+    private int currentscore;
     private String mode;
     private String answer;
     private int random;
@@ -25,11 +26,12 @@ public class StudyGuide {
             }
         }
         System.out.println("Game's over");
+        currentscore= score;
         if (score > highscore) {
             highscore = score;
             System.out.println("You got a new high score!");
         }
-        System.out.println("Congradulations, you got a " + score);
+        System.out.println("Congradulations, you got a " + currentscore);
     }
 
     public String getanswer() {
@@ -56,6 +58,10 @@ public class StudyGuide {
 
 
     public int getscore() {
+
+        return currentscore;
+    }
+    public int getHighscore () {
         return highscore;
     }
     public ArrayList<String[]> questionbank() {
@@ -69,7 +75,7 @@ public class StudyGuide {
     public String searchquestion (int index) { 
         for (int i = 0 ; i<questions.size(); i++ ) {
             if (i== index) {
-                return questions.toString(i); 
+                return toString(i);
             }
         }
         return "Nothing is found";
