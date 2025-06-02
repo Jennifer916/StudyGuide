@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
     StudyGuide a = new StudyGuide (); 
@@ -21,17 +19,21 @@ public class Main {
     a.addquestion("What is the tu form of the word ir in imperfect tense", "ibas");
     a.addquestion("What is the tu form of the word ver in imperfect tense", "veias");
     a.addquestion("What is the yo form of the word ver in preterite tense", "vi");
-
-
-        for (int i = 0; i<a.questionbank().size(); i++ ) {
+    
+    for (int i = 0; i<a.questionbank().size(); i++ ) {
         System.out.println(a.toString(i));
-        }
-   a.playgame();
-   a.modifyquestion(4, "How do you say endangered species in Spanish", "el especies de peligro");
-        for (int i = 0; i<a.questionbank().size(); i++ ) {
-           System.out.println(a.toString(i));
-       }
-   a.getscore();
-   a.searchquestion(4);
+    }
+    a.playgame();
+    a.modifyquestion(4, "How do you say endangered species in Spanish", "el especies de peligro");
+    for (int i = 0; i<a.questionbank().size(); i++ ) {
+          System.out.println(a.toString(i));
+    }
+    a.removequestion(0);
+    a.removequestion (3);
+    for (int i = 0; i<a.questionbank().size(); i++ ) {
+        System.out.println(a.toString(i));
+    }
+    a.playgame();
+    System.out.println(a.getHighScore()); 
  }
 }
