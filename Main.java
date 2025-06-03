@@ -4,7 +4,7 @@ public class Main {
     a.addquestion("What is the yo form of poder in future tense?", "podre","Future tense");
     a.addquestion("What is the tu form of salir in future tense?", "saldras","Future tense" );
     a.addquestion("What is the nosotros form of querer in future tense?", "querremos","Future tense");
-    a.addquestion("What is the el/ella form of comer in future tense?", "comeran","Future tense");
+    a.addquestion("What is the el/ella form of comer in future tense?", "comera","Future tense");
     a.addquestion("What is the ellos/ellas form of escribir in future tense?", "escribira","Future tense");
     a.addquestion("What is the ellos/ellas form of beber in conditional form?", "beberian", "Conditional");
     a.addquestion("What is the el/ella form of hablar in conditional form?", "hablaria","Conditional");
@@ -36,10 +36,10 @@ public class Main {
     for (int i = 0; i<a.questionbank().size(); i++ ) {
         System.out.println(a.toString(i));
     }
-    
+
     a.playgame();
 
-    System.out.println(a.getHighScore()); 
+    System.out.println(a.getHighScore());
     a.removetopic("Conditional");
     for (int i = 0; i<a.questionbank().size(); i++ ) {
         System.out.println(a.toString(i));
